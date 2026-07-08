@@ -1,0 +1,18 @@
+# 依存パッケージ
+node_modules/
+
+# APIキーなどの秘密情報
+.env
+
+# MARP が生成するスライド画像
+slides/*.png
+
+# Gemini TTS が生成する音声
+audio/*.wav
+
+# HyperFrames が書き出す動画
+output/*.mp4
+
+# OS が作る不要ファイル
+.DS_Store
+Thumbs.db

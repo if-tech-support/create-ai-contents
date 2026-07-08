@@ -1,0 +1,21 @@
+{
+  "name": "create-ai-contents",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "MARP + Gemini TTS + HyperFrames でスライドから動画を内製化するスターター",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "generate:slides": "marp slides/demo.md --images png --no-stdin",
+    "generate:tts": "node --env-file=.env scripts/generate-tts.js",
+    "render": "hyperframes render . -o output/demo.mp4",
+    "build": "npm run generate:slides && npm run generate:tts && npm run render"
+  },
+  "dependencies": {
+    "@google/genai": "^1",
+    "@marp-team/marp-cli": "^4",
+    "hyperframes": "^0.7"
+  }
+}
